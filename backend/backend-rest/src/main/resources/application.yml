@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: hotel-rest-api
+  datasource:
+    url: jdbc:postgresql://localhost:5432/hotel_db
+    username: hotel_user
+    password: hotel_password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+logging:
+  level:
+    com.hotel: INFO
+    org.springframework.web: INFO
+

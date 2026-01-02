@@ -1,0 +1,23 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'rest-api'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['rest-api:8080']
+        labels:
+          service: 'rest-api'
+
+  - job_name: 'soap-api'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['soap-api:8081']
+        labels:
+          service: 'soap-api'
+
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://hotel.com/soap"
+           elementFormDefault="qualified">
+    
+    <xs:element name="CreateReservationRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="clientId" type="xs:long"/>
+                <xs:element name="chambreId" type="xs:long"/>
+                <xs:element name="dateDebut" type="xs:date"/>
+                <xs:element name="dateFin" type="xs:date"/>
+                <xs:element name="preferences" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="CreateReservationResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+                <xs:element name="clientId" type="xs:long"/>
+                <xs:element name="chambreId" type="xs:long"/>
+                <xs:element name="dateDebut" type="xs:date"/>
+                <xs:element name="dateFin" type="xs:date"/>
+                <xs:element name="preferences" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="GetReservationRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="GetReservationResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+                <xs:element name="clientId" type="xs:long"/>
+                <xs:element name="chambreId" type="xs:long"/>
+                <xs:element name="dateDebut" type="xs:date"/>
+                <xs:element name="dateFin" type="xs:date"/>
+                <xs:element name="preferences" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="UpdateReservationRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+                <xs:element name="clientId" type="xs:long" minOccurs="0"/>
+                <xs:element name="chambreId" type="xs:long" minOccurs="0"/>
+                <xs:element name="dateDebut" type="xs:date" minOccurs="0"/>
+                <xs:element name="dateFin" type="xs:date" minOccurs="0"/>
+                <xs:element name="preferences" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="UpdateReservationResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+                <xs:element name="clientId" type="xs:long"/>
+                <xs:element name="chambreId" type="xs:long"/>
+                <xs:element name="dateDebut" type="xs:date"/>
+                <xs:element name="dateFin" type="xs:date"/>
+                <xs:element name="preferences" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="DeleteReservationRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="DeleteReservationResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="success" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+
