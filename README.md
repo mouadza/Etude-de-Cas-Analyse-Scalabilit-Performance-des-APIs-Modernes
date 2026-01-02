@@ -56,6 +56,3 @@ L’étude est réalisée dans un **cas d’application réel** : un *Système d
 - **GraphQL** : adapté aux **frontends complexes**, nécessite une bonne optimisation
 - **SOAP** : pertinent dans des contextes **legacy / enterprise**
 
----
-
-## 📄 Structure du dépôt
